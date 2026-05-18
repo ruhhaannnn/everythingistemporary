@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UPSC 6-Day Fighter Engine</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Dashboard Header -->
+        <header id="dashboard" class="hidden">
+            <div class="left-head">
+                <div id="paper-badge">GS Paper 1</div>
+                <div id="marks-meter">Marks: <span id="score-val">0.00</span></div>
+            </div>
+            <div class="right-head">
+                <label for="q-selector">Jump to:</label>
+                <select id="q-selector"></select>
+            </div>
+        </header>
+
+        <!-- Main Content Area -->
+        <main id="main-panel">
+            <!-- Mode Selection Screen -->
+            <div id="selection-screen">
+                <h2>Select Examination Section</h2>
+                <div class="btn-group">
+                    <button class="menu-btn" onclick="initQuiz('paper1')">General Studies (Paper 1)</button>
+                    <button class="menu-btn" onclick="initQuiz('paper2')">CSAT Aptitude (Paper 2)</button>
+                </div>
+            </div>
+
+            <!-- Quiz Screen -->
+            <div id="quiz-screen" class="hidden">
+                <div id="question-text">Loading question...</div>
+                <div id="options-container"></div>
+                <button id="submit-btn" disabled>Submit Answer</button>
+
+                <div id="feedback-container" class="hidden">
+                    <div id="result-status"></div>
+                    <div id="explanation-text"></div>
+                    <div class="nav-buttons">
+                        <button id="next-btn">Next Question</button>
+                        <button id="reset-btn" class="secondary-btn">Change Paper</button>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    
+    <!-- Script Loading Sequence -->
+    <script src="data.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
